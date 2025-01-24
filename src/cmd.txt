@@ -1,0 +1,28 @@
+Usage:
+
+    vy <commands> [arguments]
+
+The commands are:
+    date              show date and time
+    backup            backup all the settings, config, preferances to OneDrive
+                      
+                      vy-cli backup [-v] [-f folder] [-d drive]
+                      [-v]: Verbose mode
+                      [-f]: Folder, location absolute path, to backup
+                      [-d]: Drive to backup to
+                      
+                      This will take name of folder, currently only folders are supported!
+    
+    commit            stage and commit ALL the changes of project, 
+                      example:
+                        vy commit "first commit"
+                        (must add message with double inverted comma!)
+
+    weather           fetch all the weather data, like AQI, sunrise, sunset etc
+
+    rfh               update and upgrade the system (-y is already included in command)
+    stlng             install Go(v1.22.11), Python(v3.10.12), Node(v22.13.1), skip if already installed
+    help              displays help profile
+
+arguments:
+    -v                verbose mode
