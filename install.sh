@@ -23,10 +23,16 @@ fi
 
 # Build the project
 echo "Building the project..."
-go build -o vy main.go
+if ! go build -o vy main.go; then
+    echo "Build failed. Please check Go Files and try again."
+    exit 1
+fi
 
 # Move the binary to /usr/local/bin
 echo "Installing vy Command line globally..."
-sudo cp vy $INSTALL_PATH/
+if ! sudo cp vy "$INSTALL_PATH/"; then
+    echo "Installation failed. Please check permissions and try again."
+    exit 1
+fi
 
 echo "vy has been installed. You can now run it from anywhere."
